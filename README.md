@@ -2,7 +2,7 @@
 
 ## 現行規則
 
-[競技規則（2026年1月版・仮）](https://github.com/koshien2015/league/blob/main/terms.md)
+[競技規則（2026年1月版・仮）](https://github.com/koshien2015/league/blob/master/terms.md)
 
 ## 改定履歴
 
@@ -14,8 +14,8 @@
 
 ## 過去バージョン
 
-- [2025年1月版](https://github.com/koshien2015/league/blob/main/rule_2025.md)
-- [2022年5月版](https://github.com/koshien2015/league/blob/main/rule_2022.md)
+- [2025年1月版](https://github.com/koshien2015/league/blob/master/rule_2025.md)
+- [2022年5月版](https://github.com/koshien2015/league/blob/master/rule_2022.md)
 
 ## 差分の見方
 
