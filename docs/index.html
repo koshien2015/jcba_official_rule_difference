@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>キャップ野球 規則クイズ</title>
+    <meta name="description" content="キャップ野球規則 2026年4月版をもとにした、4択・正誤形式の規則学習クイズ。" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">キャップ野球 規則クイズ</h1>
+      <p class="header__subtitle">競技規則 2026年4月版</p>
+    </header>
+
+    <main class="main">
+      <!-- 開始画面 -->
+      <section id="screen-start" class="screen">
+        <div class="card">
+          <h2 class="card__title">出題設定</h2>
+
+          <div class="field">
+            <label class="field__label" for="select-category">出題タイプ</label>
+            <select id="select-category" class="field__control">
+              <option value="">すべて</option>
+              <option value="knowledge">規則の知識（条文・数値）</option>
+              <option value="judgement">場面判定（ジャッジ）</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="select-chapter">出題範囲</label>
+            <select id="select-chapter" class="field__control"></select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="select-count">問題数</label>
+            <select id="select-count" class="field__control">
+              <option value="10">10問</option>
+              <option value="20" selected>20問</option>
+              <option value="0">すべて</option>
+            </select>
+          </div>
+
+          <div class="field field--check">
+            <input type="checkbox" id="check-weak" class="field__checkbox" />
+            <label for="check-weak">過去に間違えた問題を優先して出題する</label>
+          </div>
+
+          <p id="start-info" class="note"></p>
+
+          <button id="btn-start" class="button button--primary">スタート</button>
+          <button id="btn-reset-history" class="button button--ghost">学習履歴をリセット</button>
+        </div>
+
+        <p class="disclaimer">
+          本クイズは規則の学習補助を目的とした非公式教材です。実際の判定・裁定は必ず
+          <a id="link-source" href="#" rel="noopener">規則本文</a>を確認してください。
+        </p>
+      </section>
+
+      <!-- 出題画面 -->
+      <section id="screen-quiz" class="screen is-hidden">
+        <div class="progress">
+          <div class="progress__text">
+            <span id="progress-label"></span>
+            <span id="progress-score"></span>
+          </div>
+          <div class="progress__bar"><div id="progress-fill" class="progress__fill"></div></div>
+        </div>
+
+        <div class="card">
+          <p id="question-chapter" class="chapter"></p>
+          <p id="question-text" class="question"></p>
+          <div id="choices" class="choices"></div>
+
+          <div id="feedback" class="feedback is-hidden">
+            <p id="feedback-verdict" class="feedback__verdict"></p>
+            <p id="feedback-explanation" class="feedback__explanation"></p>
+            <details class="quote">
+              <summary>規則の該当条文を見る</summary>
+              <p id="feedback-quote" class="quote__body"></p>
+              <p id="feedback-ref" class="quote__ref"></p>
+            </details>
+            <button id="btn-next" class="button button--primary">次の問題へ</button>
+          </div>
+        </div>
+
+        <button id="btn-quit" class="button button--ghost">中断してトップへ</button>
+      </section>
+
+      <!-- 結果画面 -->
+      <section id="screen-result" class="screen is-hidden">
+        <div class="card card--center">
+          <p id="result-badge" class="result__badge"></p>
+          <p id="result-score" class="result__score"></p>
+          <p id="result-rate" class="result__rate"></p>
+        </div>
+
+        <div id="result-review-wrap" class="card is-hidden">
+          <h2 class="card__title">間違えた問題</h2>
+          <ul id="result-review" class="review"></ul>
+        </div>
+
+        <button id="btn-retry-wrong" class="button button--primary is-hidden">間違えた問題だけ再挑戦</button>
+        <button id="btn-back" class="button button--ghost">トップへ戻る</button>
+      </section>
+
+      <section id="screen-error" class="screen is-hidden">
+        <div class="card">
+          <h2 class="card__title">問題を読み込めませんでした</h2>
+          <p id="error-message" class="note"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
